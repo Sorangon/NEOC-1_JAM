@@ -22,7 +22,6 @@ void UAttractor::BeginPlay()
 	
 }
 
-
 // Called every frame
 void UAttractor::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
