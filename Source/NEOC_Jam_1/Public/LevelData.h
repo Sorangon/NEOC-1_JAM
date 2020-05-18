@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -8,13 +6,16 @@
 #include "LevelData.generated.h"
 
 USTRUCT(BlueprintType)
+///<summary>
+///Contains the enemy type to generate and his target spawner
+///</summary>
 struct FEnemyData {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<AEnemy> EnemyActorType;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 TargetSpawner = 0;
 };
 
@@ -25,25 +26,28 @@ USTRUCT(BlueprintType)
 struct FWaveData {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<FEnemyData> Enemies;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 AllowedRemainingEnemies = 0;
 };
 
 USTRUCT(BlueprintType)
+///<summary>
+///Contains all the data required to manage a round
+///</summary>
 struct FRoundData {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<FWaveData> Waves;
 };
 
 /**
  * 
  */
-UCLASS()
+UCLASS(BlueprintType)
 class NEOC_JAM_1_API ULevelData : public UDataAsset {
 	GENERATED_BODY()
 
