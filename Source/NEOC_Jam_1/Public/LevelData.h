@@ -51,6 +51,8 @@ UCLASS(BlueprintType)
 class NEOC_JAM_1_API ULevelData : public UDataAsset {
 	GENERATED_BODY()
 
+	ULevelData();
+
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadonly)
 	TArray<FRoundData> RoundDatas;
